@@ -143,16 +143,18 @@
   .nav-links {
     flex-direction: column;
     flex-grow: 1;
- }
-    .nav-links a {
+  }
+  
+  .nav-links a {
       display: block;
       padding: 6px 12px;
       border-radius: 8px;
       transition: 0.3s;
       transition-duration: 500ms;
- }
-      .nav-links a.active,
-      .nav-links a.active:hover {
+   }
+  
+    .nav-links a.active,
+    .nav-links a.active:hover {
         background-color: var(--main-clr);
         color: #fff;
         border-bottom: none;
@@ -186,12 +188,12 @@
   );
 }
 
-  .marquee-track {
+.marquee-track {
     container-type: inline-size;
     display: grid;
     grid-template-columns: var(--track-width) [track] 0px [resting];
     width: max-content;
-  }
+}
 
  .marquee-item {
     grid-area: resting;
@@ -200,7 +202,7 @@
     width: var(--width);
     height: var(--height);
     position: relative;
-  }
+}
 
 @keyframes marquee-move {
   to {
