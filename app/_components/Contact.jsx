@@ -29,7 +29,7 @@ function Contact() {
               </strong>{" "}
               or send me a message directly on{" "}
               <strong>
-                <Link href="https://wa.me/+201033239019" target="_blank">
+                <Link href="https://wa.me/+201033239019" target="_blank" aria-label="send me a message through whatsapp">
                   <RiWhatsappLine
                     color="#25d366"
                     size={32}
