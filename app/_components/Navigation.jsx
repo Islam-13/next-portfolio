@@ -58,6 +58,7 @@ function Navigation({ isOpen, setIsOpen }) {
         <strong>Menu</strong>
         <button
           className="text-red-400 hover:animate-spin"
+          aria-label="close menu button"
           onClick={handleClose}
         >
           <RiCloseCircleLine />
