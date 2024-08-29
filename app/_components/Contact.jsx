@@ -23,7 +23,7 @@ function Contact() {
             <p className="mt-6 text-2xl font-light">
               I appreciate direct contact, so you can send me an{" "}
               <strong>
-                <Link className="link font-medium" href="/">
+                <Link className="link font-medium" href="mailto:islam-hussen-13@outlook.com">
                   email
                 </Link>
               </strong>{" "}
