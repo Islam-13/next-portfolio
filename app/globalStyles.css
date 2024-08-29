@@ -118,16 +118,14 @@
   }
 }
 
-.nav-links {
-  a:hover {
+.nav-links a:hover {
     color: var(--main-clr);
   }
 
-  a.active {
+  .nav-links a.active {
     color: var(--main-clr);
     border-bottom: 1px solid var(--main-clr);
   }
-}
 
 @media (max-width: 770px) {
   .side-menu {
