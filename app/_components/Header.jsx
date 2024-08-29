@@ -21,6 +21,7 @@ function Header() {
 
         <button
           className="md:hidden text-3xl p-2"
+          aria-label="menu button"
           onClick={() => setIsOpen(true)}
         >
           <RiMenuUnfoldLine />
