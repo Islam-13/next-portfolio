@@ -11,11 +11,12 @@ function Hero() {
           <h1 className="text-5xl md:text-6xl text-[--main-clr] font-bold">
             Islam Mo&apos;men
           </h1>
-          <h3 className="text-xl md:text-2xl font-semibold">
+          <h2 className="text-xl md:text-2xl font-semibold">
             Junior Front-end Developer
-          </h3>
+          </h2>
           <Link
             href="./Islam-Hussen-Frontend.pdf"
+            aria-label="watch resume link"
             className="text-white bg-[--main-clr] rounded-md w-max py-2 px-4 space-x-3 tracking-wider font-light hover:opacity-75 duration-500"
             target="_blank"
           >
