@@ -164,23 +164,19 @@
         background-color: var(--color-grey-100);
         color: var(--main-clr);
       }
-   
- 
 }
 
 .marquee {
-  max-width: 90%;
-  padding-block: 1.75rem;
   --speed: 20s;
   --single-slide-speed: calc(var(--speed) / var(--numItems));
   --gap: 20px;
   --width: 150px;
   --height: 50px;
   --track-width: calc((var(--width) + var(--gap)) * (var(--numItems) - 1));
-
+  max-width: 90%;
+  padding-block: 1.75rem;
   margin: auto;
   overflow: hidden;
-
   mask-image: linear-gradient(
     to right,
     transparent,
@@ -188,6 +184,7 @@
     #fff 80%,
     transparent
   );
+}
 
   .marquee-track {
     container-type: inline-size;
@@ -196,7 +193,7 @@
     width: max-content;
   }
 
-  .marquee-item {
+ .marquee-item {
     grid-area: resting;
     animation: marquee-move var(--speed) linear infinite;
     animation-delay: calc(var(--single-slide-speed) * var(--position) * -1);
@@ -204,7 +201,6 @@
     height: var(--height);
     position: relative;
   }
-}
 
 @keyframes marquee-move {
   to {
