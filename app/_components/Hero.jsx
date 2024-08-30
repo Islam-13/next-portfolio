@@ -15,7 +15,7 @@ function Hero() {
             Junior Front-end Developer
           </h2>
           <Link
-            href="./Islam-Hussen-Frontend.pdf"
+            href="/Islam-Hussen-Frontend.pdf"
             aria-label="watch resume link"
             className="text-white bg-[--main-clr] rounded-md w-max py-2 px-4 space-x-3 tracking-wider font-light hover:opacity-75 duration-500"
             target="_blank"

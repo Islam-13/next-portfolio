@@ -166,6 +166,28 @@
     background-color: var(--color-grey-100);
     color: var(--main-clr);
   }
+
+  .nav-links a {
+    display: block;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+    transition-duration: 500ms;
+  }
+
+  .nav-links a.active,
+  .nav-links a.active:hover {
+    background-color: var(--main-clr);
+    color: #fff;
+    border-bottom: none;
+    margin-left: 0;
+  }
+
+  .nav-links a:hover {
+    margin-left: 8px;
+    background-color: var(--color-grey-100);
+    color: var(--main-clr);
+  }
 }
 
 .marquee {
@@ -189,6 +211,20 @@
 }
 
 .marquee-track {
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: var(--track-width) [track] 0px [resting];
+  width: max-content;
+}
+
+.marquee-item {
+  grid-area: resting;
+  animation: marquee-move var(--speed) linear infinite;
+  animation-delay: calc(var(--single-slide-speed) * var(--position) * -1);
+  width: var(--width);
+  height: var(--height);
+  position: relative;
+
   container-type: inline-size;
   display: grid;
   grid-template-columns: var(--track-width) [track] 0px [resting];
