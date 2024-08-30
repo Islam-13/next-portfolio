@@ -118,15 +118,13 @@
   }
 }
 
-.nav-links {
-  a:hover {
-    color: var(--main-clr);
-  }
+.nav-links a:hover {
+  color: var(--main-clr);
+}
 
-  a.active {
-    color: var(--main-clr);
-    border-bottom: 1px solid var(--main-clr);
-  }
+.nav-links a.active {
+  color: var(--main-clr);
+  border-bottom: 1px solid var(--main-clr);
 }
 
 @media (max-width: 770px) {
@@ -145,44 +143,42 @@
   .nav-links {
     flex-direction: column;
     flex-grow: 1;
+  }
 
-    a {
-      display: block;
-      padding: 6px 12px;
-      border-radius: 8px;
-      transition: 0.3s;
-      transition-duration: 500ms;
+  .nav-links a {
+    display: block;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+    transition-duration: 500ms;
+  }
 
-      &.active,
-      &.active:hover {
-        background-color: var(--main-clr);
-        color: #fff;
-        border-bottom: none;
-        margin-left: 0;
-      }
+  .nav-links a.active,
+  .nav-links a.active:hover {
+    background-color: var(--main-clr);
+    color: #fff;
+    border-bottom: none;
+    margin-left: 0;
+  }
 
-      &:hover {
-        margin-left: 8px;
-        background-color: var(--color-grey-100);
-        color: var(--main-clr);
-      }
-    }
+  .nav-links a:hover {
+    margin-left: 8px;
+    background-color: var(--color-grey-100);
+    color: var(--main-clr);
   }
 }
 
 .marquee {
-  max-width: 90%;
-  padding-block: 1.75rem;
   --speed: 20s;
   --single-slide-speed: calc(var(--speed) / var(--numItems));
   --gap: 20px;
   --width: 150px;
   --height: 50px;
   --track-width: calc((var(--width) + var(--gap)) * (var(--numItems) - 1));
-
+  max-width: 90%;
+  padding-block: 1.75rem;
   margin: auto;
   overflow: hidden;
-
   mask-image: linear-gradient(
     to right,
     transparent,
@@ -190,22 +186,22 @@
     #fff 80%,
     transparent
   );
+}
 
-  .marquee-track {
-    container-type: inline-size;
-    display: grid;
-    grid-template-columns: var(--track-width) [track] 0px [resting];
-    width: max-content;
-  }
+.marquee-track {
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: var(--track-width) [track] 0px [resting];
+  width: max-content;
+}
 
-  .marquee-item {
-    grid-area: resting;
-    animation: marquee-move var(--speed) linear infinite;
-    animation-delay: calc(var(--single-slide-speed) * var(--position) * -1);
-    width: var(--width);
-    height: var(--height);
-    position: relative;
-  }
+.marquee-item {
+  grid-area: resting;
+  animation: marquee-move var(--speed) linear infinite;
+  animation-delay: calc(var(--single-slide-speed) * var(--position) * -1);
+  width: var(--width);
+  height: var(--height);
+  position: relative;
 }
 
 @keyframes marquee-move {

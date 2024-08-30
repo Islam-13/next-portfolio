@@ -7,6 +7,7 @@ function Icons({ center = "" }) {
       <Link
         href="https://www.linkedin.com/in/islam-hussen"
         target="_blank"
+        aria-label="linkedin profile link"
         className="group p-2"
       >
         <RiLinkedinLine
@@ -14,9 +15,11 @@ function Icons({ center = "" }) {
           className="group-hover:bg-[--main-clr] group-hover:text-white rounded duration-500 ease-linear"
         />
       </Link>
+
       <Link
         href="https://github.com/Islam-13"
         target="_blank"
+        aria-label="github link"
         className="group p-2"
       >
         <RiGithubLine

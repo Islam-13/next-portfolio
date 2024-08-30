@@ -14,14 +14,14 @@ function SwitchTheme() {
 
   if (resolvedTheme === "dark")
     return (
-      <button className=" cursor-pointer">
+      <button className=" cursor-pointer" aria-label="change mode button">
         <RiMoonClearLine onClick={() => setTheme("light")} />
       </button>
     );
 
   if (resolvedTheme === "light")
     return (
-      <button className=" cursor-pointer">
+      <button className=" cursor-pointer" aria-label="change mode button">
         <RiSunLine onClick={() => setTheme("dark")} />
       </button>
     );

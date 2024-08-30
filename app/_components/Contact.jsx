@@ -23,13 +23,20 @@ function Contact() {
             <p className="mt-6 text-2xl font-light">
               I appreciate direct contact, so you can send me an{" "}
               <strong>
-                <Link className="link font-medium" href="/">
+                <Link
+                  className="link font-medium"
+                  href="mailto:islam-hussen-13@outlook.com"
+                >
                   email
                 </Link>
               </strong>{" "}
               or send me a message directly on{" "}
               <strong>
-                <Link href="https://wa.me/+201033239019" target="_blank">
+                <Link
+                  href="https://wa.me/+201033239019"
+                  target="_blank"
+                  aria-label="send me a message through whatsapp"
+                >
                   <RiWhatsappLine
                     color="#25d366"
                     size={32}
