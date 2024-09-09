@@ -7,7 +7,10 @@ import DarkModeProvider from "./_context/DarkModeContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Islam Mo'men",
+  title: {
+    template: "%s / Islam Mo'men",
+    default: "Islam Mo'men",
+  },
   description:
     "passionate Software Engineer with a strong foundation in web development technologies",
 };

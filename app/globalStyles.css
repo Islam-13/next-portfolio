@@ -12,7 +12,7 @@
   }
 
   .link {
-    @apply text-[--main-clr] border-b border-transparent hover:border-[--main-clr] duration-500;
+    @apply w-fit text-[--color-brand-500] border-b border-transparent hover:border-[--color-brand-500] duration-500;
   }
 }
 
@@ -53,9 +53,6 @@
       --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
       --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
       --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
-
-      --image-grayscale: 0;
-      --image-opacity: 100%;
     }
     &.dark {
       --color-grey-0: #18212f;
@@ -81,21 +78,13 @@
       --color-indigo-100: #3730a3;
       --color-indigo-700: #e0e7ff;
 
-      --color-red-100: #fee2e2;
-      --color-red-700: #b91c1c;
-      --color-red-800: #991b1b;
-
-      --backdrop-color: rgba(0, 0, 0, 0.3);
-
       --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
       --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.3);
       --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.4);
-
-      --image-grayscale: 10%;
-      --image-opacity: 90%;
     }
 
-    --main-clr: #1d4fd7;
+    --main-clr: #6366f1;
+
     /* Indigo */
     --color-brand-50: #eef2ff;
     --color-brand-100: #e0e7ff;
@@ -105,17 +94,16 @@
     --color-brand-700: #4338ca;
     --color-brand-800: #3730a3;
     --color-brand-900: #312e81;
-
-    --border-radius-tiny: 3px;
-    --border-radius-sm: 5px;
-    --border-radius-md: 7px;
-    --border-radius-lg: 9px;
   }
 
   html {
     scroll-padding: 56px;
     scroll-behavior: smooth;
   }
+}
+
+::view-transition-group(root) {
+  animation-duration: 1s;
 }
 
 .nav-links a:hover {
@@ -190,54 +178,9 @@
   }
 }
 
-.marquee {
-  --speed: 20s;
-  --single-slide-speed: calc(var(--speed) / var(--numItems));
-  --gap: 20px;
-  --width: 150px;
-  --height: 50px;
-  --track-width: calc((var(--width) + var(--gap)) * (var(--numItems) - 1));
-  max-width: 90%;
-  padding-block: 1.75rem;
-  margin: auto;
-  overflow: hidden;
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    #fff 20%,
-    #fff 80%,
-    transparent
-  );
-}
-
-.marquee-track {
-  container-type: inline-size;
-  display: grid;
-  grid-template-columns: var(--track-width) [track] 0px [resting];
-  width: max-content;
-}
-
 .marquee-item {
-  grid-area: resting;
   animation: marquee-move var(--speed) linear infinite;
   animation-delay: calc(var(--single-slide-speed) * var(--position) * -1);
-  width: var(--width);
-  height: var(--height);
-  position: relative;
-
-  container-type: inline-size;
-  display: grid;
-  grid-template-columns: var(--track-width) [track] 0px [resting];
-  width: max-content;
-}
-
-.marquee-item {
-  grid-area: resting;
-  animation: marquee-move var(--speed) linear infinite;
-  animation-delay: calc(var(--single-slide-speed) * var(--position) * -1);
-  width: var(--width);
-  height: var(--height);
-  position: relative;
 }
 
 @keyframes marquee-move {
@@ -246,16 +189,91 @@
   }
 }
 
-.card-container {
-  container: card / inline-size;
-}
-
 .card {
-  @container card (min-width: 445px) and (max-width: 560px) {
+  @container card (min-width: 400px) and (max-width: 560px) {
     flex-direction: row;
 
     .image-wrap {
       min-width: 200px;
     }
+  }
+}
+
+@property --x {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --r2 {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.resume {
+  background: conic-gradient(
+      from calc(var(--r2) - 80deg) at var(--x) 15px,
+      transparent 0,
+      red 20%,
+      transparent 25%
+    ),
+    #6366f1;
+
+  animation: rotate1 -0.64s linear 3s infinite,
+    rotate2 -0.64s linear 3s infinite;
+}
+
+@keyframes rotate1 {
+  0% {
+    --r2: 0deg;
+  }
+  32% {
+    --r2: 0deg;
+  }
+
+  50% {
+    --r2: 180deg;
+  }
+
+  82% {
+    --r2: 180deg;
+  }
+
+  100% {
+    --r2: 360deg;
+  }
+}
+
+@keyframes rotate2 {
+  0% {
+    --x: 20px;
+  }
+  32% {
+    --x: 110px;
+  }
+
+  50% {
+    --x: 110px;
+  }
+
+  82% {
+    --x: 20px;
+  }
+
+  100% {
+    --x: 20px;
+  }
+}
+
+@starting-style {
+  .hero {
+    opacity: 0;
+    translate: 50px;
+  }
+
+  .card {
+    opacity: 0;
+    scale: 0.6;
   }
 }

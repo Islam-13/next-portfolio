@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { RiCloseCircleLine } from "react-icons/ri";
 import Icons from "./Icons";
@@ -17,7 +16,7 @@ const navLinks = [
 ];
 
 function Navigation({ isOpen, setIsOpen }) {
-  const [active, setActive] = useState("home");
+  const [active, setActive] = useState("");
   const pathName = usePathname();
   const ref = useDetectClick(handleClose);
 
@@ -25,29 +24,38 @@ function Navigation({ isOpen, setIsOpen }) {
     setIsOpen(false);
   }
 
+  function getActiveSection() {
+    const sections = document.querySelectorAll("section");
+    const scrollY = window.scrollY;
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const offset = 56; // header height
+
+      if (
+        scrollY + offset >= sectionTop &&
+        scrollY < sectionTop + sectionHeight
+      ) {
+        setActive(section.id);
+      }
+    });
+  }
+
   useEffect(function () {
-    function handleScroll() {
-      const sections = document.querySelectorAll("section");
-      const scrollY = window.scrollY;
+    window.addEventListener("scroll", getActiveSection);
 
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const offset = 56; // header height
-
-        if (
-          scrollY + offset >= sectionTop &&
-          scrollY < sectionTop + sectionHeight
-        ) {
-          setActive(section.id);
-        }
-      });
-    }
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", getActiveSection);
   }, []);
+
+  useEffect(
+    function () {
+      if (pathName.startsWith("/projects")) {
+        setActive("projects");
+      } else getActiveSection();
+    },
+    [pathName]
+  );
 
   return (
     <nav

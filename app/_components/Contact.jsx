@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { RiWhatsappLine } from "react-icons/ri";
 
 function Contact() {
@@ -23,16 +22,16 @@ function Contact() {
             <p className="mt-6 text-2xl font-light">
               I appreciate direct contact, so you can send me an{" "}
               <strong>
-                <Link
+                <a
                   className="link font-medium"
                   href="mailto:islam-hussen-13@outlook.com"
                 >
                   email
-                </Link>
+                </a>
               </strong>{" "}
               or send me a message directly on{" "}
               <strong>
-                <Link
+                <a
                   href="https://wa.me/+201033239019"
                   target="_blank"
                   aria-label="send me a message through whatsapp"
@@ -42,7 +41,7 @@ function Contact() {
                     size={32}
                     style={{ display: "inline-block" }}
                   />
-                </Link>
+                </a>
               </strong>
             </p>
           </div>

@@ -1,28 +1,24 @@
-import Link from "next/link";
-import { RiGithubLine } from "react-icons/ri";
-import Project from "./Project";
+import CardContainer from "./CardContainer";
+import TransitionLink from "./TransitionLink";
 
 const projects = [
   {
+    id: 1,
     src: "/images/projects/sticky-tasks.png",
     title: "sticky tasks",
-    desc: "Single-page CRUD app for task management. Implemented filtering, searching, validation, and authentication.",
-    code: "https://github.com/Islam-13/sticky-tasks-Front-end",
-    demo: "https://sticky-tasks-front-end.vercel.app/",
+    desc: "Single-page CRUD app for task management. Users can easily add, edit, and delete tasks, as well as filter them by category to focus on specific areas of work.  It’s a good way to stay organized.",
   },
   {
+    id: 2,
     src: "/images/projects/cash-tracker.jpg",
     title: "cash tracker",
-    desc: "This secure web app empowers you to effortlessly track your expenses providing valuable insights into your cash flow.",
-    code: "https://github.com/Islam-13/Cash-Tracker",
-    demo: "https://cash-tracker-01.netlify.app/",
+    desc: "This secure web app empowers you to effortlessly track your expenses providing valuable insights into your cash flow. Users can easily input detailed information about each expense, including the date, price, and category. The app offers intuitive charts and visualizations to help users gain insights into their spending habits, identify areas for cost reduction, and make informed financial decisions.",
   },
   {
+    id: 3,
     src: "/images/projects/fresh-cart.jpg",
-    title: "fresh cart",
-    desc: "User-friendly web app provides a comprehensive solution for businesses to establish a powerful online store.",
-    code: "https://github.com/Islam-13/Fresh-Cart--e-commerce-",
-    demo: "https://fresh-cart-react.netlify.app/",
+    title: "fresh cart(e-commerce)",
+    desc: "This e-commerce application offers a seamless online shopping experience, allowing users to browse through various categories, brands, and products. The platform incorporates robust features such as a user-friendly checkout process that supports both cash and online payments. To enhance user experience and optimize search engine visibility, the app utilizes Formik for form handling, React Helmet for SEO, and React Query for efficient remote global UI state management.",
   },
 ];
 
@@ -32,21 +28,12 @@ function Projects() {
       <div className="wrapper">
         <h3 className="heading">Projects</h3>
 
-        <div className="card-container grid sm:grid-cols-2 md:grid-cols-3  gap-4 md:gap-5">
-          {projects.map((proj) => (
-            <Project key={proj.title} project={proj} />
-          ))}
-        </div>
+        <CardContainer projects={projects} />
 
         <div className="mt-8 text-center text-2xl">
-          <Link
-            href="https://github.com/Islam-13"
-            target="_blank"
-            className="link"
-          >
-            Check <RiGithubLine style={{ display: "inline-block" }} /> for more
-            &rarr;
-          </Link>
+          <TransitionLink href="/projects" styles="link">
+            Explore more projects
+          </TransitionLink>
         </div>
       </div>
     </section>

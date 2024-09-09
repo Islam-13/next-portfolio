@@ -1,17 +1,16 @@
 import Image from "next/image";
-import Link from "next/link";
-import { RiExternalLinkLine, RiGithubLine } from "react-icons/ri";
+import TransitionLink from "./TransitionLink";
 
 function Project({ project }) {
-  const { src, title, desc, code, demo } = project;
+  const { id, src, title, desc } = project;
   return (
-    <div className="card p-4 md:p-4 rounded-lg shadow-lg flex flex-col gap-5 bg-[--color-grey-200] hover:scale-105 duration-500">
-      <div className="image-wrap relative aspect-video">
+    <div className="card border border-transparent p-4 md:p-4 rounded-lg shadow-lg flex flex-col gap-5 group bg-[--color-grey-200] hover:border-[--main-clr] hover:bg-[--color-grey-300] duration-700">
+      <div className="image-wrap group-hover:grayscale-0 relative aspect-video grayscale-[50%]">
         <Image
           fill
           src={src}
           alt={`${title} image`}
-          className="rounded-lg"
+          className="rounded-lg object-cover"
           priority
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
@@ -19,26 +18,15 @@ function Project({ project }) {
 
       <div className="flex flex-col gap-2">
         <h4 className="text-xl font-semibold capitalize">{title}</h4>
-        <p className="text-sm tracking-wide line-clamp-3">{desc}</p>
+        <p className="text-sm tracking-wide line-clamp-3 text-[--color-grey-500]">
+          {desc}
+        </p>
 
         <hr />
 
-        <div className="flex justify-between text-sm ">
-          <Link
-            href={code}
-            target="_blank"
-            className="flex items-center gap-1 min-w-fit link"
-          >
-            source code <RiGithubLine />
-          </Link>
-          <Link
-            href={demo}
-            target="_blank"
-            className="flex items-center gap-1 min-w-fit link"
-          >
-            live demo <RiExternalLinkLine />
-          </Link>
-        </div>
+        <TransitionLink href={`/projects/${id}`} styles="link">
+          More details &rarr;
+        </TransitionLink>
       </div>
     </div>
   );

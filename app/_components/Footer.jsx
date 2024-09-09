@@ -7,7 +7,8 @@ function Footer() {
         <p>Find me online :</p>
         <Icons center="justify-center" />
         <p>
-          © <span>2024</span> - present Islam Mo&apos;men. All rights reserved.
+          © <span>{new Date().getFullYear()}</span> - present Islam Mo&apos;men.
+          All rights reserved.
         </p>
       </div>
     </footer>
