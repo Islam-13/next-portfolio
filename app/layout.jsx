@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning className=" snap-y snap-proximity">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.className} bg-[--color-grey-50] text-[--color-grey-800]`}
       >

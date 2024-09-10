@@ -24,7 +24,7 @@ function Contact() {
               <strong>
                 <a
                   className="link font-medium"
-                  href="mailto:islam-hussein@outlook.com"
+                  href="mailto:islam-hussen-13@outlook.com"
                 >
                   email
                 </a>
