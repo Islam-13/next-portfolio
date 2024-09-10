@@ -14,6 +14,10 @@
   .link {
     @apply w-fit text-[--color-brand-500] border-b border-transparent hover:border-[--color-brand-500] duration-500;
   }
+
+  section {
+    @apply snap-start;
+  }
 }
 
 @layer base {
@@ -125,7 +129,7 @@
     width: 280px;
     height: 100vh;
     border-right: 1px solid blue;
-    transition: all 0.4s ease;
+    transition: all 1s ease;
   }
 
   .nav-links {
@@ -186,16 +190,6 @@
 @keyframes marquee-move {
   to {
     transform: translateX(calc(-100cqw - 100%));
-  }
-}
-
-.card {
-  @container card (min-width: 400px) and (max-width: 560px) {
-    flex-direction: row;
-
-    .image-wrap {
-      min-width: 200px;
-    }
   }
 }
 
@@ -269,11 +263,88 @@
 @starting-style {
   .hero {
     opacity: 0;
-    translate: 50px;
+    transform: translateX(-100%);
+  }
+}
+
+.card {
+  @container card (min-width: 400px) and (max-width: 560px) {
+    flex-direction: row;
+
+    .image-wrap {
+      min-width: 200px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .card:nth-of-type(odd) {
+    animation: appearOdd linear;
+    animation-timeline: view();
+    animation-range: entry -50px cover 25%;
+  }
+  .card:nth-of-type(even) {
+    animation: appearEven linear;
+    animation-timeline: view();
+    animation-range: entry -50px cover 25%;
+  }
+}
+
+@media (min-width: 768px) {
+  .card:nth-child(3n + 1) {
+    animation: appearOdd linear;
+    animation-timeline: view();
+    animation-range: entry -50px cover 25%;
   }
 
-  .card {
+  .card:nth-child(3n + 2) {
+    animation: appearMiddle linear;
+    animation-timeline: view();
+    animation-range: entry -50px cover 25%;
+  }
+
+  .card:nth-child(3n + 3) {
+    animation: appearEven linear;
+    animation-timeline: view();
+    animation-range: entry -50px cover 25%;
+  }
+}
+
+@keyframes appearOdd {
+  from {
     opacity: 0;
-    scale: 0.6;
+    transform: translateX(-100%);
+    clip-path: inset(100% 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes appearEven {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+    clip-path: inset(100% 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes appearMiddle {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+    clip-path: inset(100% 0 100% 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0 0 0 0);
   }
 }

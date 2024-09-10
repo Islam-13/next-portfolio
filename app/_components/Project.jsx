@@ -1,11 +1,15 @@
 import Image from "next/image";
 import TransitionLink from "./TransitionLink";
 
-function Project({ project }) {
+function Project({ project, index }) {
   const { id, src, title, desc } = project;
+  console.log(index);
   return (
-    <div className="card border border-transparent p-4 md:p-4 rounded-lg shadow-lg flex flex-col gap-5 group bg-[--color-grey-200] hover:border-[--main-clr] hover:bg-[--color-grey-300] duration-700">
-      <div className="image-wrap group-hover:grayscale-0 relative aspect-video grayscale-[50%]">
+    <div
+      className="card border border-transparent p-4 md:p-4 rounded-lg shadow-lg flex flex-col gap-5 group bg-[--color-grey-200]
+                hover:border-[--main-clr] hover:bg-[--color-grey-300] duration-700"
+    >
+      <div className="image-wrap group-hover:grayscale-0 duration-700 relative aspect-video grayscale-[60%]">
         <Image
           fill
           src={src}
