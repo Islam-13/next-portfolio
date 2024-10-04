@@ -145,6 +145,21 @@ const projects = [
       "/images/tech/mongodb-logo.svg",
     ],
   },
+  {
+    id: 10,
+    src: "/images/projects/the-wild-oasis.png",
+    title: "The Wild Oasis",
+    role: "full stack",
+    desc: "Internal hotel management system that streamlines guest check-in and check-out processes, provides real-time room availability information, and generates detailed statistics on guest stays and sales performance. The system will enhance operational efficiency, improve guest satisfaction, and enable data-driven decision-making for hotel management.",
+    code: "https://github.com/Islam-13/the-wild-oasis",
+    demo: "https://the-wild-oasis-13.vercel.app",
+    category: "React",
+    tech: [
+      "/images/tech/styled-components-logo.png",
+      "/images/tech/reactjs-logo.svg",
+      "/images/tech/supabase-logo.svg",
+    ],
+  },
 ];
 
 function ProjectDetails({ params }) {

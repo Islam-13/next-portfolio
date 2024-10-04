@@ -76,9 +76,15 @@ const projects = [
     id: 9,
     src: "/images/projects/e-commerce.png",
     title: "e-commerce app",
-    role: "back-end",
     desc: "This e-commerce backend API provides the foundation for a scalable and feature-rich online shopping platform. Built with Express and Mongoose, the API offers efficient data management and retrieval. Nodemailer enables email confirmation, password resets and more. Joi ensures data integrity and validation, while JWT provides secure authentication and authorization. Stripe facilitate online payments, offering a secure and convenient shopping experience for customers.",
     category: ["Node"],
+  },
+  {
+    id: 10,
+    src: "/images/projects/the-wild-oasis.png",
+    title: "The Wild Oasis",
+    desc: "Internal hotel management system that streamlines guest check-in and check-out processes, provides real-time room availability information, and generates detailed statistics on guest stays and sales performance. The system will enhance operational efficiency, improve guest satisfaction, and enable data-driven decision-making for hotel management.",
+    category: ["React"],
   },
 ];
 
