@@ -214,15 +214,9 @@ function ProjectDetails({ params }) {
               {project[0]?.tech?.map((tool) => (
                 <div
                   key={tool}
-                  className="flex items-center justify-center w-14 h-14 p-2 rounded-full bg-[--color-grey-200]"
+                  className="flex items-center justify-center w-14 h-14 rounded-full bg-[--color-grey-200] relative"
                 >
-                  <Image
-                    src={tool}
-                    alt="test"
-                    width="30"
-                    height="30"
-                    className="rounded-md"
-                  />
+                  <Image src={tool} alt="logo" fill className="p-3" />
                 </div>
               ))}
             </div>

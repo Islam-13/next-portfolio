@@ -10,7 +10,7 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="h-14 fixed top-0 w-full shadow-md z-[1] bg-[--color-grey-50]">
+    <header className="h-14 fixed top-0 w-full shadow-md z-[2] bg-[--color-grey-50]">
       {isOpen && (
         <div className="fixed inset-0 bg-[rgba(255, 255, 255, 0.1)] backdrop-blur-sm"></div>
       )}
