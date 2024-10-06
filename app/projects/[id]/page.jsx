@@ -168,7 +168,7 @@ function ProjectDetails({ params }) {
   return (
     <main className="my-16 py-8">
       <div className="wrapper flex flex-col gap-9 ">
-        <div className="border rounded-lg p-2 text-sm md:text-base">
+        <div className="border rounded-lg p-2 text-sm md:text-base flex flex-wrap items-center">
           <TransitionLink
             href="/"
             styles="px-3 py-1 rounded-xl hover:bg-[--color-grey-200] duration-500 ease-in"
@@ -183,15 +183,15 @@ function ProjectDetails({ params }) {
             Projects
           </TransitionLink>
           &raquo;
-          <span className="bg-[--color-grey-200] px-3 py-1 rounded-xl ml-1">
+          <span className="bg-[--color-grey-200] px-3 py-1 rounded-xl ml-1 whitespace-nowrap">
             {project[0].title}
           </span>
         </div>
 
-        <div className="relative flex flex-col md:flex-row gap-3 md:gap-6">
+        <div className="relative flex flex-col md:grid grid-cols-5 gap-3 md:gap-6 items-center">
           <BackButton />
 
-          <div className="relative w-[70%] md:w-1/3 h-[230px] mx-auto">
+          <div className="relative aspect-square w-[80%] md:w-full  h-[230px] mx-auto col-span-2">
             <Image
               src={project[0].src}
               alt={`${project[0].title} image`}
@@ -203,14 +203,14 @@ function ProjectDetails({ params }) {
             />
           </div>
 
-          <div className="py-2 px-4 flex flex-col gap-4 md:w-2/3">
+          <div className="py-2 px-4 flex flex-col gap-4  col-span-3">
             <h2 className="capitalize text-2xl">{project[0].title}</h2>
 
             <h3 className="capitalize text-xl">{project[0].role}</h3>
 
             <p className="text-[--color-grey-500]">{project[0].desc}</p>
 
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               {project[0]?.tech?.map((tool) => (
                 <div
                   key={tool}

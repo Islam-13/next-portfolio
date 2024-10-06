@@ -10,7 +10,7 @@ function Project({ project }) {
           fill
           src={src}
           alt={`${title} image`}
-          className="rounded-lg object-cover"
+          className="rounded-lg object-fill"
           priority
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
