@@ -8,7 +8,7 @@ const projects = [
     id: 1,
     src: "/images/projects/sticky-tasks.png",
     role: "Full Stack",
-    title: "sticky tasks",
+    title: "Sticky Tasks",
     desc: "Single-page CRUD app for task management. Users can easily add, edit, and delete tasks, as well as filter them by category to focus on specific areas of work.  It’s a good way to stay organized.",
     code: "https://github.com/Islam-13/sticky-tasks-Front-end",
     demo: "https://sticky-tasks-front-end.vercel.app/",
@@ -24,7 +24,7 @@ const projects = [
   {
     id: 2,
     src: "/images/projects/cash-tracker.jpg",
-    title: "cash tracker",
+    title: "Cash Tracker",
     role: "full stack",
     desc: "This secure web app empowers you to effortlessly track your expenses providing valuable insights into your cash flow. Users can easily input detailed information about each expense, including the date, price, and category. The app offers intuitive charts and visualizations to help users gain insights into their spending habits, identify areas for cost reduction, and make informed financial decisions.",
     code: "https://github.com/Islam-13/Cash-Tracker",
@@ -39,7 +39,7 @@ const projects = [
   {
     id: 3,
     src: "/images/projects/fresh-cart.jpg",
-    title: "fresh cart(e-commerce)",
+    title: "Fresh Cart(e-commerce)",
     role: "front-end",
     desc: "This e-commerce application offers a seamless online shopping experience, allowing users to browse through various categories, brands, and products. The platform incorporates robust features such as a user-friendly checkout process that supports both cash and online payments. To enhance user experience and optimize search engine visibility, the app utilizes Formik for form handling, React Helmet for SEO, and React Query for efficient remote global UI state management.",
     code: "https://github.com/Islam-13/Fresh-Cart--e-commerce-",
@@ -102,7 +102,7 @@ const projects = [
   {
     id: 7,
     src: "/images/projects/weather-app.png",
-    title: "weather App",
+    title: "Weather App",
     role: "front-end",
     desc: "This web-based application provides real-time weather information for various locations worldwide. Users can easily input their desired location and receive up-to-date weather data, including temperature, humidity, precipitation, and wind conditions. The app offers a user-friendly interface for quick and easy access to weather forecasts.",
     code: "https://github.com/Islam-13/weather-js",
@@ -133,7 +133,7 @@ const projects = [
   {
     id: 9,
     src: "/images/projects/e-commerce.png",
-    title: "e-commerce app",
+    title: "E-commerce app",
     role: "back-end",
     desc: "This e-commerce backend API provides the foundation for a scalable and feature-rich online shopping platform. Built with Express and Mongoose, the API offers efficient data management and retrieval. Nodemailer enables email confirmation, password resets and more. Joi ensures data integrity and validation, while JWT provides secure authentication and authorization. Stripe facilitate online payments, offering a secure and convenient shopping experience for customers.",
     code: "https://github.com/Islam-13/e-commerce-Back-end",
@@ -161,6 +161,12 @@ const projects = [
     ],
   },
 ];
+
+export async function generateMetadata({ params }) {
+  const project = projects.filter((proj) => proj.id == params.id);
+
+  return { title: `${project[0].title}` };
+}
 
 function ProjectDetails({ params }) {
   const project = projects.filter((proj) => proj.id == params.id);

@@ -105,12 +105,17 @@ function FilterProjects() {
   }
 
   function handleClick(tab) {
-    document.startViewTransition(() => {
-      flushSync(() => {
-        setActiveTab(tab);
-        filterData(tab);
+    if (document.startViewTransition) {
+      document.startViewTransition(() => {
+        flushSync(() => {
+          setActiveTab(tab);
+          filterData(tab);
+        });
       });
-    });
+    } else {
+      setActiveTab(tab);
+      filterData(tab);
+    }
   }
 
   return (
