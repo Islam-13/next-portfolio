@@ -168,6 +168,12 @@ export async function generateMetadata({ params }) {
   return { title: `${project[0].title}` };
 }
 
+export async function generateStaticParams() {
+  const ids = projects.map((project) => ({ id: String(project.id) }));
+
+  return ids;
+}
+
 function ProjectDetails({ params }) {
   const project = projects.filter((proj) => proj.id == params.id);
 
