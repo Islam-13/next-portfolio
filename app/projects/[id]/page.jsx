@@ -28,7 +28,7 @@ const projects = [
     role: "full stack",
     desc: "This secure web app empowers you to effortlessly track your expenses providing valuable insights into your cash flow. Users can easily input detailed information about each expense, including the date, price, and category. The app offers intuitive charts and visualizations to help users gain insights into their spending habits, identify areas for cost reduction, and make informed financial decisions.",
     code: "https://github.com/Islam-13/Cash-Tracker",
-    demo: "https://cash-tracker-01.netlify.app/",
+    demo: "https://cash-tracker-01.vercel.app",
     category: "React",
     tech: [
       "/images/tech/tailwind-logo.svg",
