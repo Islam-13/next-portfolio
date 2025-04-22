@@ -1,10 +1,9 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { RiCloseCircleLine } from "react-icons/ri";
-import Icons from "./Icons";
-import useDetectClick from "../_hooks/useDetectClick";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+
+import Icons from "./Icons";
 import NavLink from "./NavLink";
 
 const navLinks = [
@@ -15,10 +14,9 @@ const navLinks = [
   { name: "contact", url: "#contact" },
 ];
 
-function Navigation({ isOpen, setIsOpen }) {
+function Navigation({ setIsOpen }) {
   const [active, setActive] = useState("");
   const pathName = usePathname();
-  const ref = useDetectClick(handleClose);
 
   function handleClose() {
     setIsOpen(false);
@@ -31,7 +29,7 @@ function Navigation({ isOpen, setIsOpen }) {
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
-      const offset = 56; // header height
+      const offset = 65; // header height
 
       if (
         scrollY + offset >= sectionTop &&
@@ -42,38 +40,22 @@ function Navigation({ isOpen, setIsOpen }) {
     });
   }
 
-  useEffect(function () {
-    window.addEventListener("scroll", getActiveSection);
-
-    return () => window.removeEventListener("scroll", getActiveSection);
-  }, []);
-
   useEffect(
     function () {
+      window.addEventListener("scroll", getActiveSection);
+
       if (pathName.startsWith("/projects")) {
         setActive("projects");
       } else getActiveSection();
+
+      return () => window.removeEventListener("scroll", getActiveSection);
     },
     [pathName]
   );
 
   return (
-    <nav
-      ref={ref}
-      className={`side-menu ${isOpen ? "left-0" : "left-[-281px]"}`}
-    >
-      <div className="md:hidden text-2xl flex justify-between items-center h-14 shadow-md p-3">
-        <strong>Menu</strong>
-        <button
-          className="text-red-400 hover:animate-spin"
-          aria-label="close menu button"
-          onClick={handleClose}
-        >
-          <RiCloseCircleLine />
-        </button>
-      </div>
-
-      <ul className="nav-links flex gap-2 p-3 md:gap-4 capitalize tracking-wider">
+    <nav className="py-7 md:p-0">
+      <ul className="nav-links md:flex capitalize tracking-wider">
         {navLinks.map((link) => (
           <NavLink
             key={link.name}
@@ -86,7 +68,7 @@ function Navigation({ isOpen, setIsOpen }) {
         ))}
       </ul>
 
-      <div className="mb-10 md:hidden">
+      <div className="md:hidden">
         <Icons center="justify-center" />
       </div>
     </nav>

@@ -2,41 +2,43 @@
 
 import Link from "next/link";
 import Navigation from "./Navigation";
-import { RiMenuUnfoldLine } from "react-icons/ri";
 import SwitchTheme from "./SwitchTheme";
 import { useState } from "react";
+import useDetectClick from "../_hooks/useDetectClick";
+import MenuButton from "./MenuButton";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const ref = useDetectClick(() => setIsOpen(false));
 
   return (
-    <header className="h-14 fixed top-0 w-full shadow-md z-[2] bg-[--color-grey-50]">
-      {isOpen && (
-        <div className="fixed inset-0 bg-[rgba(255, 255, 255, 0.1)] backdrop-blur-sm"></div>
-      )}
-      <div className="h-full w-[90%] max-w-[1050px] mx-auto flex justify-between items-center">
-        <Link href="/" className=" hidden md:block text-2xl font-bold">
-          iM
-        </Link>
+    <header className="fixed top-0 w-full p-4 z-10">
+      <div
+        ref={ref}
+        className={`${
+          isOpen ? "h-auto" : "h-[65px]"
+        } head-center border rounded-2xl px-6 md:px-8 py-4 shadow-md z-[2] bg-[--color-grey-op] backdrop-blur-md md:flex items-center justify-between overflow-clip`}
+      >
+        <div className="flex justify-between items-center">
+          <Link href="/" className="text-2xl font-bold">
+            iM
+          </Link>
 
-        <button
-          className="md:hidden text-3xl p-2"
-          aria-label="menu button"
-          onClick={() => setIsOpen(true)}
-        >
-          <RiMenuUnfoldLine />
-        </button>
+          <Link
+            href="/"
+            className="md:hidden font-bold text-lg tracking-wide hover:text-[--main-clr] hover:border-b hover:border-[--main-clr] duration-500"
+          >
+            Islam Mo&apos;men
+          </Link>
 
-        <Link
-          href="/"
-          className="md:hidden font-bold text-lg tracking-wide hover:text-[--main-clr] hover:border-b hover:border-[--main-clr] duration-500"
-        >
-          Islam Mo&apos;men
-        </Link>
+          <MenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
+        </div>
 
-        <Navigation isOpen={isOpen} setIsOpen={setIsOpen} />
+        <Navigation setIsOpen={setIsOpen} />
 
-        <SwitchTheme />
+        <div className="border-t-[1px] border-[--color-grey-800] pt-7 md:contents">
+          <SwitchTheme />
+        </div>
       </div>
     </header>
   );
