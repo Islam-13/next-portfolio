@@ -22,6 +22,7 @@
     &.light {
       /* Grey */
       --color-grey-0: #fff;
+      --color-grey-op: #f9fafb20;
       --color-grey-50: #f9fafb;
       --color-grey-100: #f3f4f6;
       --color-grey-200: #e5e7eb;
@@ -56,6 +57,7 @@
     }
     &.dark {
       --color-grey-0: #18212f;
+      --color-grey-op: #11182730;
       --color-grey-50: #111827;
       --color-grey-100: #1f2937;
       --color-grey-200: #374151;
@@ -97,7 +99,7 @@
   }
 
   html {
-    scroll-padding: 56px;
+    scroll-padding: 60px;
     scroll-behavior: smooth;
   }
 }
@@ -106,76 +108,21 @@
   animation-duration: 1s;
 }
 
-.nav-links a:hover {
-  color: var(--main-clr);
-}
-
-.nav-links a.active {
-  color: var(--main-clr);
-  border-bottom: 1px solid var(--main-clr);
-}
-
-@media (max-width: 770px) {
-  .side-menu {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-grey-50);
-    top: 0;
-    width: 280px;
-    height: 100vh;
-    border-right: 1px solid blue;
-    transition: all 0.6s ease;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    flex-grow: 1;
-  }
-
-  .nav-links a {
-    display: block;
-    padding: 6px 12px;
-    border-radius: 8px;
-    transition: 0.3s;
-    transition-duration: 500ms;
-  }
-
-  .nav-links a.active,
-  .nav-links a.active:hover {
-    background-color: var(--main-clr);
-    color: #fff;
-    border-bottom: none;
-    margin-left: 0;
-  }
-
-  .nav-links a:hover {
-    margin-left: 8px;
-    background-color: var(--color-grey-100);
-    color: var(--main-clr);
-  }
-
-  .nav-links a {
-    display: block;
-    padding: 6px 12px;
-    border-radius: 8px;
-    transition: 0.3s;
-    transition-duration: 500ms;
-  }
-
-  .nav-links a.active,
-  .nav-links a.active:hover {
-    background-color: var(--main-clr);
-    color: #fff;
-    border-bottom: none;
-    margin-left: 0;
-  }
-
-  .nav-links a:hover {
-    margin-left: 8px;
-    background-color: var(--color-grey-100);
-    color: var(--main-clr);
-  }
+.head-center {
+  interpolate-size: allow-keywords;
+  transition: height 600ms;
+  transition-timing-function: linear(
+    0,
+    0.417 25.5%,
+    0.867 49.4%,
+    1 57.7%,
+    0.925 65.1%,
+    0.908 68.6%,
+    0.902 72.2%,
+    0.916 78.2%,
+    0.988 92.1%,
+    1
+  );
 }
 
 .marquee-item {
