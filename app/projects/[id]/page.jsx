@@ -11,7 +11,7 @@ const projects = [
     title: "Sticky Tasks",
     desc: "Single-page CRUD app for task management. Users can easily add, edit, and delete tasks, as well as filter them by category to focus on specific areas of work.  It’s a good way to stay organized.",
     code: "https://github.com/Islam-13/sticky-tasks-Front-end",
-    demo: "https://sticky-tasks-front-end.vercel.app/",
+    demo: "https://sticky-tasks-01.netlify.app",
     category: "javaScript",
     tech: [
       "/images/tech/html-logo.svg",
@@ -28,7 +28,7 @@ const projects = [
     role: "full stack",
     desc: "This secure web app empowers you to effortlessly track your expenses providing valuable insights into your cash flow. Users can easily input detailed information about each expense, including the date, price, and category. The app offers intuitive charts and visualizations to help users gain insights into their spending habits, identify areas for cost reduction, and make informed financial decisions.",
     code: "https://github.com/Islam-13/Cash-Tracker",
-    demo: "https://cash-tracker-01.vercel.app",
+    demo: "https://cash-tracker-13.netlify.app",
     category: "React",
     tech: [
       "/images/tech/tailwind-logo.svg",
@@ -43,7 +43,7 @@ const projects = [
     role: "front-end",
     desc: "This e-commerce application offers a seamless online shopping experience, allowing users to browse through various categories, brands, and products. The platform incorporates robust features such as a user-friendly checkout process that supports both cash and online payments. To enhance user experience and optimize search engine visibility, the app utilizes Formik for form handling, React Helmet for SEO, and React Query for efficient remote global UI state management.",
     code: "https://github.com/Islam-13/Fresh-Cart--e-commerce-",
-    demo: "https://fresh-cart-react.netlify.app/",
+    demo: "https://fresh-cart-react.netlify.app",
     category: "React",
     tech: [
       "/images/tech/bootstrap-logo.svg",
@@ -58,7 +58,7 @@ const projects = [
     title: "Fast Pizza Co.",
     desc: "This intuitive pizza ordering application offers a straightforward user interface for customers to explore the menu and place their orders. The app leverages React Router for seamless navigation between different pages, Redux Toolkit for efficient state management, and React Hook Form for streamlined order form handling. Customers can conveniently track the status of their orders, ensuring a hassle-free and enjoyable pizza-ordering experience.",
     code: "https://github.com/Islam-13/Fast-Pizza-Co.",
-    demo: "https://fast-pizza-co-two.vercel.app",
+    demo: "https://fast-pizza-01.netlify.app",
     category: "React",
     tech: [
       "/images/tech/tailwind-logo.svg",
@@ -152,7 +152,7 @@ const projects = [
     role: "full stack",
     desc: "Internal hotel management system that streamlines guest check-in and check-out processes, provides real-time room availability information, and generates detailed statistics on guest stays and sales performance. The system will enhance operational efficiency, improve guest satisfaction, and enable data-driven decision-making for hotel management.",
     code: "https://github.com/Islam-13/the-wild-oasis",
-    demo: "https://the-wild-oasis-13.vercel.app",
+    demo: "https://the-wild-oasis-03.netlify.app",
     category: "React",
     tech: [
       "/images/tech/styled-components-logo.png",
