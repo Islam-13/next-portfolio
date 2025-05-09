@@ -43,7 +43,7 @@ const projects = [
     role: "front-end",
     desc: "This e-commerce application offers a seamless online shopping experience, allowing users to browse through various categories, brands, and products. The platform incorporates robust features such as a user-friendly checkout process that supports both cash and online payments. To enhance user experience and optimize search engine visibility, the app utilizes Formik for form handling, React Helmet for SEO, and React Query for efficient remote global UI state management.",
     code: "https://github.com/Islam-13/Fresh-Cart--e-commerce-",
-    demo: "https://fresh-cart-react.netlify.app",
+    demo: "https://fresh-cart-01.netlify.app",
     category: "React",
     tech: [
       "/images/tech/bootstrap-logo.svg",
