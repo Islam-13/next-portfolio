@@ -42,14 +42,14 @@ function ProjectDetails({ params }) {
           </span>
         </div>
 
-        <div className="relative flex flex-col md:grid grid-cols-5 gap-3 md:gap-6 items-center">
+        <div className="relative flex flex-col md:grid grid-cols-5 gap-3 md:gap-6 items-start">
           <BackButton />
 
-          <div className="relative aspect-square w-[80%] md:w-full  h-[230px] mx-auto col-span-2">
+          <div className="relative w-[80%] aspect-video md:w-full mx-auto col-span-2 my-2">
             <Image
               src={project[0].src}
               alt={`${project[0].title} image`}
-              className="rounded-lg object-cover"
+              className="rounded-lg object-center"
               fill
               priority
               quality={90}
