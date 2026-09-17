@@ -7,14 +7,14 @@ function About() {
       <div className="wrapper">
         <h3 className="heading">About</h3>
         <p className="mb-3">
-          I am a passionate <strong>Junior Software Engineer</strong> with a
+          I am a passionate <strong>Mid-level Software Engineer</strong> with a
           strong foundation in web development technologies. My expertise lies
           in crafting user-friendly and interactive interfaces using
-          <strong>React JS</strong>, while leveraging my knowledge of vanilla
-          <strong>JavaScript</strong> for core functionalities. Additionally, I
+          <strong> React JS</strong>, while leveraging my knowledge of vanilla
+          <strong> JavaScript</strong> for core functionalities. Additionally, I
           am proficient in styling frameworks like
-          <strong>Bootstrap and Tailwind CSS</strong> to ensure consistent and
-          <strong>responsive designs</strong> across diverse platforms.
+          <strong> Bootstrap and Tailwind CSS</strong> to ensure consistent and
+          <strong> responsive designs</strong> across diverse platforms.
         </p>
 
         <p>
